@@ -19,9 +19,11 @@ names(data) <- c("Date", "GAP")
 #convert GAP data to numeric
 data[2] <- as.numeric(as.character(data[[2]]))
 
+#create png file
+png("plot1.png", width = 480, height = 480, units = "px")
+
 #create histogram
 hist(data$GAP, main = "Global Active Power", col = "red", xlab = "Global Active Power (kilowatts)")
 
-#copy histogram to a PNG file
-dev.copy(png, file = "plot1.png", width = 480, height = 480, units = "px")
+#close
 dev.off()

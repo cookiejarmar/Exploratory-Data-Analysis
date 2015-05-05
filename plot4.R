@@ -24,6 +24,9 @@ for(i in 2:8){
         data[i] <- as.numeric(as.character(data[[i]]))
 }
 
+#create png file
+png("plot4.png", width = 480, height = 480, units = "px")
+
 #set up the parameters for four plots on what graphic interface
 par(mfcol = c(2, 2), bg = "white")
 
@@ -57,6 +60,5 @@ plot(j, k, type = "n", xlab = "datetime", ylab = "Global_reactive_power")
 lines(j, k)
 
 
-#copy line chart to a PNG file
-dev.copy(png, file = "plot4.png", width = 480, height = 480, units = "px")
+#close
 dev.off()

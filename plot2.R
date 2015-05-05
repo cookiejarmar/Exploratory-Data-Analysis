@@ -26,12 +26,14 @@ data <- data[, 2:3]
 names(data) <- c("DateTime", "GAP")     #fix the column names
 data[1] <- ymd_hms(data$DateTime)
 
+#create png file
+png("plot2.png", width = 480, height = 480, units = "px")
+
 #create line chart
 x <- data$DateTime
 y <- data$GAP
 plot(x, y, type = "n", xlab = NA, ylab = "Global Active Power (kilowatts")
 lines(x, y)
 
-#copy line chart to a PNG file
-dev.copy(png, file = "plot2.png", width = 480, height = 480, units = "px")
+#close
 dev.off()
